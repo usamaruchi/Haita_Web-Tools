@@ -1,6 +1,6 @@
 window.CATEGORIES = [
   ['ui','圖示與介面元件','◈','#7160d3'],['carousel','輪播與滑動展示','▤','#4f83bc'],['lightbox','燈箱與圖片預覽','▧','#b5824f'],['scroll','捲動與頁面動態','↕','#57866b'],['graphics','圖形、動畫與物理','✧','#a66a9b'],['interaction','操作互動與提示','⌘','#688891'],['data','資料、表格與日曆','▦','#63816c'],['audio','音訊與多語系','♫','#9a7662'],['resources','開發資源與教學','▱','#818090'],
-  ['assets','插畫與設計素材','▧','#ad825b'],['stock','攝影與影音圖庫','▣','#688c82'],['design','線上設計與背景','✎','#9c789d'],['inspiration','設計靈感與案例','✧','#bb8b66'],['colors','配色與色彩工具','◒','#a57783'],['fonts','字型與文字資源','Aa','#898462'],['models','3D 模型與素材','◇','#7282ab'],['image-tools','圖片處理與轉檔','▨','#aa8b5e'],['video-tools','影音處理與壓縮','▷','#a48178']
+  ['assets','插畫與設計素材','▧','#ad825b'],['stock','攝影與影音圖庫','▣','#688c82'],['design','線上設計與背景','✎','#9c789d'],['inspiration','設計靈感與案例','✧','#bb8b66'],['colors','配色與色彩工具','◒','#a57783'],['fonts','字型與文字資源','Aa','#898462'],['models','3D 模型與素材','◇','#7282ab'],['image-tools','圖片處理與轉檔','▨','#aa8b5e'],['video-tools','影音處理與壓縮','▷','#a48178'],['ai-render','AI 建築與空間渲染','⌂','#9b8b6c'],['3d-design','3D 設計與互動','⬡','#7e89a7'],['ai-work','AI 助理與協作','✦','#8a7b9b']
 ];
 window.SEED_TOOLS = [
 ['Ionicons','https://ionic.io/ionicons','ui','開源 SVG 圖示庫，適合網站、App 與介面按鈕使用。',['SVG','圖示']],
@@ -73,5 +73,14 @@ window.SEED_TOOLS = [
 ['CodeFormer 人臉修復','https://huggingface.co/spaces/sczhou/CodeFormer','image-tools','使用 AI 修復模糊或低畫質照片中的人臉，提升臉部細節；可在線上示範頁調整修復效果。',['AI 修復','人臉修復','照片增強','Hugging Face']],
 ['Free3D','https://free3d.com/zh/','models','搜尋與下載人物、建築、交通工具等 3D 模型，提供免費與付費素材及多種模型格式。',['3D','模型下載','Blender','FBX']],
 ['Coding.Tools HTML 壓縮','https://coding.tools/tw/html-minifier.html','resources','將 HTML 程式碼壓縮為較精簡的內容，移除多餘格式與註解，方便複製或下載使用。',['HTML','程式碼壓縮','網頁優化']],
-['PiliApp 影片壓縮','https://tw.piliapp.com/video/compress/','video-tools','直接在瀏覽器中壓縮影片，可調整畫質與解析度並匯出 MP4，支援批次處理且不需上傳檔案。',['影片壓縮','MP4','批次處理','本機處理']]
+['PiliApp 影片壓縮','https://tw.piliapp.com/video/compress/','video-tools','直接在瀏覽器中壓縮影片，可調整畫質與解析度並匯出 MP4，支援批次處理且不需上傳檔案。',['影片壓縮','MP4','批次處理','本機處理']],
+['Redraw AI','https://www.redrawai.co.kr/studio','ai-render','整合 AI 渲染、圖片編輯與圖片轉 3D，可將建築草圖、空間視圖或產品照片轉為設計成果。',['AI 渲染','建築設計','圖片轉 3D','圖片編輯']],
+['Vibe3D','https://app.vibe3d.ai/projects','ai-render','將建築與室內設計視圖轉為 AI 渲染圖，可調整材質、燈光與局部細節，整理專案提案視覺。',['AI 渲染','室內設計','建築視覺化','材質燈光']],
+['ShaderGradient','https://shadergradient.co/','design','建立可自訂色彩、形狀與動態的 3D 漸層背景，可搭配 Figma、Framer 與 React 使用。',['動態漸層','3D 背景','Figma','Framer','React']],
+['Brik','https://brik.space/','design','以 AI 協助建立可調整參數的設計工具，探索圖片效果、動態文字與 3D 場景等創作。',['AI 設計','工具產生器','動態文字','圖片效果']],
+['Spline','https://spline.design/','3d-design','在瀏覽器中建立 3D 場景、材質、動畫與互動效果，支援協作並嵌入網站或應用程式。',['3D 設計','互動場景','動畫','網站嵌入']],
+['Teamily AI','https://teamily.ai/','ai-work','結合對話、AI 助理與協作工作空間，可協助研究、整理文件、製作簡報與處理團隊工作。',['AI 助理','團隊協作','文件簡報','研究整理']],
+['Paper Animator','https://paperanimator.com/','video-tools','將照片製成紙張剪貼、撕邊與摺疊展開動畫，也提供動態文字範本，可匯出 MP4 或透明 PNG。',['紙張動畫','照片動畫','動態文字','MP4']],
+['Framer 網站範本','https://www.framer.com/marketplace/templates/','assets','瀏覽 Framer 社群的免費與付費網站範本，適合建立作品集、品牌網站、產品介紹與登陸頁。',['Framer','網站範本','作品集','登陸頁']],
+['DeeVid AI','https://deevid.ai/zh-TW/home','video-tools','透過文字、圖片或既有影片生成 AI 影片，可加入動態效果、轉換風格，製作社群短片與創意影片。',['AI 影片','文字轉影片','圖片轉影片','影片風格轉換']]
 ].map((t,i)=>({id:'seed-'+i,name:t[0],url:t[1],category:t[2],description:t[3],tags:t[4],favorite:false,createdAt:i}));

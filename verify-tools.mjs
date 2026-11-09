@@ -3,7 +3,7 @@ import {readFile,writeFile,mkdtemp} from 'node:fs/promises';
 import {spawn} from 'node:child_process';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
-const root=path.resolve('tool-library/dist');
+const root=path.resolve(process.env.HAITA_SITE_DIST || 'tool-library/dist');
 const server=createServer(async(req,res)=>{try{const file=path.join(root,req.url==='/'?'index.html':req.url.slice(1));if(!file.startsWith(root+path.sep))throw Error();res.setHeader('Content-Type',file.endsWith('.css')?'text/css':file.endsWith('.js')?'application/javascript':file.endsWith('.png')?'image/png':'text/html');res.end(await readFile(file));}catch{res.writeHead(404).end();}});
 await new Promise(resolve=>server.listen(8891,'127.0.0.1',resolve));
 const profile=await mkdtemp(path.join(tmpdir(),'haita-qa-'));
@@ -18,28 +18,28 @@ try{
  const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
  await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
  await send('Page.navigate',{url:'http://127.0.0.1:8891/'});
- for(let i=0;i<50;i++){if(await evaluate('document.querySelectorAll(".card").length===71'))break;await new Promise(r=>setTimeout(r,150));}
+ for(let i=0;i<50;i++){if(await evaluate('document.querySelectorAll(".card").length===79'))break;await new Promise(r=>setTimeout(r,150));}
  const reload = async () => { await send('Page.reload');await new Promise(r=>setTimeout(r,700)); };
  await evaluate(`(()=>{const old=structuredClone(window.SEED_TOOLS.slice(0,34)).filter(t=>t.id!=='seed-1');old[0].favorite=true;old[0].description='My edited description';old[0].rating=3;old.push({id:'my-custom',name:'Custom resource',url:'https://example.com/custom',category:'resources',description:'My own tool',tags:['custom'],favorite:true,createdAt:1000});localStorage.setItem('haita-tools-v1',JSON.stringify(old));})()`);
  await reload();
- const upgrade=await evaluate(`(()=>{const s=JSON.parse(localStorage.getItem('haita-tools-v1'));if(s.version!==2||s.tools.length!==71||s.tools.some(t=>t.id==='seed-1')||!s.tools.some(t=>t.id==='my-custom'&&t.favorite)||!s.tools.some(t=>t.id==='seed-0'&&t.favorite&&t.description==='My edited description')||s.tools.some(t=>'rating'in t))throw Error('Legacy migration lost user data');s.tools=s.tools.filter(t=>t.id!=='seed-34');localStorage.setItem('haita-tools-v1',JSON.stringify(s));return 'Legacy upgrade preserves edits, favorites, deletions and custom tools';})()`);console.log(upgrade);
+ const upgrade=await evaluate(`(()=>{const s=JSON.parse(localStorage.getItem('haita-tools-v1'));if(s.version!==2||s.tools.length!==79||s.tools.some(t=>t.id==='seed-1')||!s.tools.some(t=>t.id==='my-custom'&&t.favorite)||!s.tools.some(t=>t.id==='seed-0'&&t.favorite&&t.description==='My edited description')||s.tools.some(t=>'rating'in t))throw Error('Legacy migration lost user data');s.tools=s.tools.filter(t=>t.id!=='seed-34');localStorage.setItem('haita-tools-v1',JSON.stringify(s));return 'Legacy upgrade preserves edits, favorites, deletions and custom tools';})()`);console.log(upgrade);
  await reload();
- await evaluate(`(()=>{const s=JSON.parse(localStorage.getItem('haita-tools-v1'));if(s.tools.length!==70||s.tools.some(t=>t.id==='seed-34'))throw Error('Deleted new seed reappeared');localStorage.removeItem('haita-tools-v1');})()`);console.log('Deleted new resources stay deleted after reload');
+ await evaluate(`(()=>{const s=JSON.parse(localStorage.getItem('haita-tools-v1'));if(s.tools.length!==78||s.tools.some(t=>t.id==='seed-34'))throw Error('Deleted new seed reappeared');localStorage.removeItem('haita-tools-v1');})()`);console.log('Deleted new resources stay deleted after reload');
  await reload();
- await evaluate(`(()=>{const old=structuredClone(window.SEED_TOOLS.slice(0,68));const seen=old.map(t=>t.id);old[0].favorite=true;old[0].description='Preserved v2 edit';localStorage.setItem('haita-tools-v1',JSON.stringify({version:2,tools:old.filter(t=>t.id!=='seed-1'),seedCatalogIds:seen}));})()`);
+ await evaluate(`(()=>{const old=structuredClone(window.SEED_TOOLS.slice(0,71));const seen=old.map(t=>t.id);old[0].favorite=true;old[0].description='Preserved v2 edit';localStorage.setItem('haita-tools-v1',JSON.stringify({version:2,tools:old.filter(t=>t.id!=='seed-1'),seedCatalogIds:seen}));})()`);
  await reload();
- await evaluate(`(()=>{const s=JSON.parse(localStorage.getItem('haita-tools-v1'));if(s.tools.length!==70||s.tools.some(t=>t.id==='seed-1')||!s.tools.some(t=>t.id==='seed-0'&&t.favorite&&t.description==='Preserved v2 edit')||s.tools.filter(t=>Number(t.id.replace('seed-',''))>=68).length!==3)throw Error('v2 update failed');localStorage.removeItem('haita-tools-v1');})()`);console.log('Existing 68-item v2 collection receives all 3 new tools without losing edits or deletions');
+ await evaluate(`(()=>{const s=JSON.parse(localStorage.getItem('haita-tools-v1'));if(s.tools.length!==78||s.tools.some(t=>t.id==='seed-1')||!s.tools.some(t=>t.id==='seed-0'&&t.favorite&&t.description==='Preserved v2 edit')||s.tools.filter(t=>Number(t.id.replace('seed-',''))>=71).length!==8)throw Error('v2 update failed');localStorage.removeItem('haita-tools-v1');})()`);console.log('Existing 71-item v2 collection receives all 8 new tools without losing edits or deletions');
  await reload();
  const result=await evaluate(`(async()=>{
  const checks=[];const check=(name,value)=>{if(!value)throw Error(name);checks.push(name);};const $=id=>document.getElementById(id);const count=()=>document.querySelectorAll('.card').length;
- check('71 initial tools',count()===71);check('18 categories',document.querySelectorAll('#categories button').length===18);
+ check('79 initial tools',count()===79);check('21 categories',document.querySelectorAll('#categories button').length===21);
  $('search').value='Swiper';$('search').dispatchEvent(new Event('input'));check('search',count()===1&&document.querySelector('h3').textContent==='Swiper');
  $('clear').click();document.querySelector('[data-category="carousel"]').click();check('category filter',count()===5);$('all').click();
  document.querySelector('[data-action="favorite"]').click();$('favorites').click();check('favorites',count()===1);$('all').click();
- $('add').click();$('tool-name').value='QA tool';$('tool-url').value='https://example.com/';$('tool-description').value='QA description';$('tool-form').requestSubmit();check('add tool',count()===72);
+ $('add').click();$('tool-name').value='QA tool';$('tool-url').value='https://example.com/';$('tool-description').value='QA description';$('tool-form').requestSubmit();check('add tool',count()===80);
  let added=JSON.parse(localStorage.getItem('haita-tools-v1')).tools.find(t=>t.name==='QA tool');check('persistent save',!!added);
  document.querySelector('[data-action="edit"][data-id="'+added.id+'"]').click();$('tool-name').value='QA updated';$('tool-form').requestSubmit();check('edit tool',JSON.parse(localStorage.getItem('haita-tools-v1')).tools.some(t=>t.name==='QA updated'));
- document.querySelector('[data-action="edit"][data-id="'+added.id+'"]').click();$('delete-tool').click();check('delete confirmation',$('confirm-dialog').open);$('confirm-ok').click();check('delete tool',count()===71);
+ document.querySelector('[data-action="edit"][data-id="'+added.id+'"]').click();$('delete-tool').click();check('delete confirmation',$('confirm-dialog').open);$('confirm-ok').click();check('delete tool',count()===79);
  check('rating controls removed',!$('rated')&&!$('tool-rating')&&!document.querySelector('.rating')&&!document.querySelector('option[value=rating]'));
  check('favorite retained',JSON.parse(localStorage.getItem('haita-tools-v1')).tools.filter(t=>t.favorite).length===1);
  check('new data has no ratings',JSON.parse(localStorage.getItem('haita-tools-v1')).tools.every(t=>!('rating' in t)));
