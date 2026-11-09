@@ -1,0 +1,4 @@
+# Sites publishing checkouts have their own Git history. Keep the editable
+# website source in tool-library/ tracked by this repository.
+**/.sites-checkout/
+**/.sites-checkout-*/
