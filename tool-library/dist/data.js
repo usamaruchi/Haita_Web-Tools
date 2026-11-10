@@ -82,5 +82,12 @@ window.SEED_TOOLS = [
 ['Teamily AI','https://teamily.ai/','ai-work','結合對話、AI 助理與協作工作空間，可協助研究、整理文件、製作簡報與處理團隊工作。',['AI 助理','團隊協作','文件簡報','研究整理']],
 ['Paper Animator','https://paperanimator.com/','video-tools','將照片製成紙張剪貼、撕邊與摺疊展開動畫，也提供動態文字範本，可匯出 MP4 或透明 PNG。',['紙張動畫','照片動畫','動態文字','MP4']],
 ['Framer 網站範本','https://www.framer.com/marketplace/templates/','assets','瀏覽 Framer 社群的免費與付費網站範本，適合建立作品集、品牌網站、產品介紹與登陸頁。',['Framer','網站範本','作品集','登陸頁']],
-['DeeVid AI','https://deevid.ai/zh-TW/home','video-tools','透過文字、圖片或既有影片生成 AI 影片，可加入動態效果、轉換風格，製作社群短片與創意影片。',['AI 影片','文字轉影片','圖片轉影片','影片風格轉換']]
+['DeeVid AI','https://deevid.ai/zh-TW/home','video-tools','透過文字、圖片或既有影片生成 AI 影片，可加入動態效果、轉換風格，製作社群短片與創意影片。',['AI 影片','文字轉影片','圖片轉影片','影片風格轉換']],
+['Uiverse','https://uiverse.io/','ui','社群製作的開源 UI 元件庫，可探索按鈕、輸入框、卡片與載入效果，並取得 HTML/CSS、Tailwind 或 React 等實作。',['UI 元件','HTML/CSS','Tailwind CSS','React']],
+['Details.so Inspo','https://www.details.so/inspo','inspiration','精選網站與介面設計靈感，適合觀察版面配置、互動細節與視覺風格，整理下一個專案的參考。',['網頁設計','UI/UX','互動細節','版面參考']],
+['PulsoIcon','https://pulsoicon.com/','ui','提供具個別動態效果的圖示，可預覽並整合至 React、Vue 等專案，為按鈕與導覽加入互動回饋。',['動態圖示','React','Vue','微互動']],
+['MotionSites','https://motionsites.ai/','inspiration','收集網站、登陸頁與介面設計案例及可直接使用的 AI 提示詞，協助發想版面與生成網站。',['AI 提示詞','登陸頁','網頁設計','設計靈感']],
+['Navbar Gallery','https://www.navbar.gallery/','inspiration','專門收集網站導覽設計，包含固定導覽列、下拉選單、Mega Menu、側邊欄與全螢幕選單等案例。',['導覽列','Navbar','選單設計','Mega Menu']],
+['Footer Design','https://www.footer.design/','inspiration','精選網站頁尾設計，可依排版、風格與動態等特徵探索案例，參考品牌資訊與連結的呈現方式。',['頁尾','Footer','網頁排版','設計案例']],
+['CTA Gallery','https://www.cta.gallery/','inspiration','收集行動呼籲設計案例，包含按鈕、表單、訂閱、下載與彈窗，方便參考轉換區塊的視覺與文案。',['CTA','行動呼籲','按鈕設計','轉換設計']]
 ].map((t,i)=>({id:'seed-'+i,name:t[0],url:t[1],category:t[2],description:t[3],tags:t[4],favorite:false,createdAt:i}));
