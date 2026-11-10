@@ -89,5 +89,18 @@ window.SEED_TOOLS = [
 ['MotionSites','https://motionsites.ai/','inspiration','收集網站、登陸頁與介面設計案例及可直接使用的 AI 提示詞，協助發想版面與生成網站。',['AI 提示詞','登陸頁','網頁設計','設計靈感']],
 ['Navbar Gallery','https://www.navbar.gallery/','inspiration','專門收集網站導覽設計，包含固定導覽列、下拉選單、Mega Menu、側邊欄與全螢幕選單等案例。',['導覽列','Navbar','選單設計','Mega Menu']],
 ['Footer Design','https://www.footer.design/','inspiration','精選網站頁尾設計，可依排版、風格與動態等特徵探索案例，參考品牌資訊與連結的呈現方式。',['頁尾','Footer','網頁排版','設計案例']],
-['CTA Gallery','https://www.cta.gallery/','inspiration','收集行動呼籲設計案例，包含按鈕、表單、訂閱、下載與彈窗，方便參考轉換區塊的視覺與文案。',['CTA','行動呼籲','按鈕設計','轉換設計']]
+['CTA Gallery','https://www.cta.gallery/','inspiration','收集行動呼籲設計案例，包含按鈕、表單、訂閱、下載與彈窗，方便參考轉換區塊的視覺與文案。',['CTA','行動呼籲','按鈕設計','轉換設計']],
+['Google Gemini','https://gemini.google.com/app?hl=zh-TW','ai-work','Google 的 AI 助理，可協助問答、寫作、資料整理、程式撰寫與圖片理解，適合學習及日常工作。',['AI 助理','寫作','資料整理','Google']],
+['TinyPNG','https://tinypng.com/','image-tools','線上壓縮 PNG、JPEG、WebP 等圖片，減少檔案容量，方便網站圖片最佳化與分享。',['圖片壓縮','PNG','JPEG','WebP']],
+['Hero Patterns','https://heropatterns.com/','design','提供可重複鋪排的 SVG 背景圖樣，可調整前景、背景色與透明度，取得 CSS 或下載 SVG。',['SVG','背景圖樣','CSS','重複圖樣']],
+['Animista','https://animista.net/play/basic/rotate-scale','graphics','線上預覽與調整 CSS 動畫，設定時間、緩動、延遲及循環，再產生可使用的動畫程式碼。',['CSS 動畫','動畫產生器','緩動','旋轉縮放']],
+['Material Design 3 色彩系統','https://m3.material.io/styles/color/system/overview','colors','Google 的介面色彩設計指南，說明主色、表面與文字等色彩角色，以及深淺色主題的配色原則。',['Material Design','色彩系統','設計指南','深淺色主題']],
+['Gradient Hunt','https://gradienthunt.com/linear','colors','探索線性漸層配色與色彩靈感，適合為網站、介面與視覺設計尋找漸層背景組合。',['線性漸層','配色靈感','背景','色票']],
+['WebGradients','https://webgradients.com/','colors','收集可直接使用的漸層背景，提供色碼與 CSS，方便套用到網站區塊及介面設計。',['漸層','CSS','背景','色碼']],
+['uiGradients','https://uigradients.com/#ServQuick','colors','瀏覽漸層配色並取得色碼與 CSS，適合尋找網站背景和介面主視覺的色彩搭配。',['漸層','CSS','色碼','配色靈感']],
+['Squoosh','https://squoosh.app/','image-tools','在瀏覽器內壓縮與轉換圖片，可調整編碼品質、比較前後畫質，圖片不需上傳。',['圖片壓縮','格式轉換','畫質比較','本機處理']],
+['Napkin AI','https://www.napkin.ai/','ai-work','將文字內容轉成可編輯的圖解、流程圖、心智圖與圖表，方便製作簡報及說明文件。',['AI 圖解','流程圖','心智圖','簡報圖表']],
+['Claude','https://claude.ai/','ai-work','Anthropic 的 AI 助理，可協助寫作、分析文件、撰寫程式與整理想法，並建立互動內容。',['AI 助理','文件分析','寫作','程式開發']],
+['Luma AI／Dream Machine','https://lumalabs.ai/app','video-tools','透過文字或圖片生成影片，探索動態場景、鏡頭與影片風格，適合短片和視覺創作。',['AI 影片','文字轉影片','圖片轉影片','視覺創作']],
+['Google Stitch','https://stitch.google.com/','design','使用文字描述或圖片參考產生網站與 App 介面，可反覆調整 UI 設計並探索互動原型。',['AI 介面設計','UI/UX','原型設計','Google']]
 ].map((t,i)=>({id:'seed-'+i,name:t[0],url:t[1],category:t[2],description:t[3],tags:t[4],favorite:false,createdAt:i}));
