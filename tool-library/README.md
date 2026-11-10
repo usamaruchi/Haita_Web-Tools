@@ -14,3 +14,5 @@
 - Google 字型無法連線時，自動使用系統字型。頁面其餘功能不依賴外部服務。
 
 本機程式檢查：`node --check dist/app.js`、`node --check dist/data.js`。
+
+網站每次更新時，請同步更新 `dist/index.html` 的 `#site-updated` 日期：`datetime` 使用 `YYYY-MM-DD`，顯示使用 `YYYY.MM.DD`，以 Asia/Taipei 當天日期為準。此日期記錄網站版本更新日，重新開啟頁面時維持原值。
