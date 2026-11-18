@@ -1,6 +1,7 @@
 window.CATEGORIES = [
   ['ui','圖示與介面元件','◈','#7160d3'],['carousel','輪播與滑動展示','▤','#4f83bc'],['lightbox','燈箱與圖片預覽','▧','#b5824f'],['scroll','捲動與頁面動態','↕','#57866b'],['graphics','圖形、動畫與物理','✧','#a66a9b'],['interaction','操作互動與提示','⌘','#688891'],['data','資料、表格與日曆','▦','#63816c'],['audio','音訊與多語系','♫','#9a7662'],['resources','開發資源與教學','▱','#818090'],
-  ['assets','插畫與設計素材','▧','#ad825b'],['stock','攝影與影音圖庫','▣','#688c82'],['design','線上設計與背景','✎','#9c789d'],['inspiration','設計靈感與案例','✧','#bb8b66'],['colors','配色與色彩工具','◒','#a57783'],['fonts','字型與文字資源','Aa','#898462'],['models','3D 模型與素材','◇','#7282ab'],['image-tools','圖片處理與轉檔','▨','#aa8b5e'],['video-tools','影音處理與壓縮','▷','#a48178'],['ai-render','AI 建築與空間渲染','⌂','#9b8b6c'],['3d-design','3D 設計與互動','⬡','#7e89a7'],['ai-work','AI 助理與協作','✦','#8a7b9b']
+  ['assets','插畫與設計素材','▧','#ad825b'],['stock','攝影與影音圖庫','▣','#688c82'],['design','線上設計與背景','✎','#9c789d'],['inspiration','設計靈感與案例','✧','#bb8b66'],['colors','配色與色彩工具','◒','#a57783'],['fonts','字型與文字資源','Aa','#898462'],['models','3D 模型與素材','◇','#7282ab'],['image-tools','圖片處理與轉檔','▨','#aa8b5e'],['video-tools','影音處理與壓縮','▷','#a48178'],['ai-render','AI 建築與空間渲染','⌂','#9b8b6c'],['3d-design','3D 設計與互動','⬡','#7e89a7'],['ai-work','AI 助理與協作','✦','#8a7b9b'],
+  ['link-tools','短網址與連結管理','↗','#67898d']
 ];
 window.SEED_TOOLS = [
 ['Ionicons','https://ionic.io/ionicons','ui','開源 SVG 圖示庫，適合網站、App 與介面按鈕使用。',['SVG','圖示']],
@@ -102,5 +103,6 @@ window.SEED_TOOLS = [
 ['Napkin AI','https://www.napkin.ai/','ai-work','將文字內容轉成可編輯的圖解、流程圖、心智圖與圖表，方便製作簡報及說明文件。',['AI 圖解','流程圖','心智圖','簡報圖表']],
 ['Claude','https://claude.ai/','ai-work','Anthropic 的 AI 助理，可協助寫作、分析文件、撰寫程式與整理想法，並建立互動內容。',['AI 助理','文件分析','寫作','程式開發']],
 ['Luma AI／Dream Machine','https://lumalabs.ai/app','video-tools','透過文字或圖片生成影片，探索動態場景、鏡頭與影片風格，適合短片和視覺創作。',['AI 影片','文字轉影片','圖片轉影片','視覺創作']],
-['Google Stitch','https://stitch.google.com/','design','使用文字描述或圖片參考產生網站與 App 介面，可反覆調整 UI 設計並探索互動原型。',['AI 介面設計','UI/UX','原型設計','Google']]
+['Google Stitch','https://stitch.google.com/','design','使用文字描述或圖片參考產生網站與 App 介面，可反覆調整 UI 設計並探索互動原型。',['AI 介面設計','UI/UX','原型設計','Google']],
+['lihi','https://lihi.io/','link-tools','建立品牌短網址與 QR Code，可替換目標網址、進行 A/B 分流測試並追蹤點擊數據。',['短網址','QR Code','A/B 測試','行銷追蹤']]
 ].map((t,i)=>({id:'seed-'+i,name:t[0],url:t[1],category:t[2],description:t[3],tags:t[4],favorite:false,createdAt:i}));
