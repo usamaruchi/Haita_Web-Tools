@@ -104,5 +104,6 @@ window.SEED_TOOLS = [
 ['Claude','https://claude.ai/','ai-work','Anthropic 的 AI 助理，可協助寫作、分析文件、撰寫程式與整理想法，並建立互動內容。',['AI 助理','文件分析','寫作','程式開發']],
 ['Luma AI／Dream Machine','https://lumalabs.ai/app','video-tools','透過文字或圖片生成影片，探索動態場景、鏡頭與影片風格，適合短片和視覺創作。',['AI 影片','文字轉影片','圖片轉影片','視覺創作']],
 ['Google Stitch','https://stitch.google.com/','design','使用文字描述或圖片參考產生網站與 App 介面，可反覆調整 UI 設計並探索互動原型。',['AI 介面設計','UI/UX','原型設計','Google']],
-['lihi','https://lihi.io/','link-tools','建立品牌短網址與 QR Code，可替換目標網址、進行 A/B 分流測試並追蹤點擊數據。',['短網址','QR Code','A/B 測試','行銷追蹤']]
+['lihi','https://lihi.io/','link-tools','建立品牌短網址與 QR Code，可替換目標網址、進行 A/B 分流測試並追蹤點擊數據。',['短網址','QR Code','A/B 測試','行銷追蹤']],
+['卡斯伯免費音效庫','https://www.casper.tw/sound-effects/zh-tw/','audio','可搜尋、試聽並下載免費 MP3 音效，涵蓋環境音、動物聲、遊戲與介面提示音。',['免費音效','MP3','環境音','介面音效']]
 ].map((t,i)=>({id:'seed-'+i,name:t[0],url:t[1],category:t[2],description:t[3],tags:t[4],favorite:false,createdAt:i}));
